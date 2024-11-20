@@ -1,0 +1,31 @@
+{
+    "version": 3,
+    "name": "wyvandkeep.zip",
+    "items": [
+      "Wyv and Keep - The Temple of the Lost Idol.sh",
+      "wyvandkeep"
+    ],
+    "items_opt": [],
+    "attr": {
+      "title": "Wyv and Keep - The Temple of the Lost Idol",
+      "porter": [
+        "kotzebuedog"
+      ],
+      "desc": "Command treasure hunters Wyv and Keep through an ancient Amazonian temple in search of the Lost Idol! Use quick reflexes and teamwork to conquer a gauntlet of 60 fiendish puzzles and deadly traps. Unlock the secrets of the mystical Xu'hutl pygmies and their terrifying overlord, the great Quetzecola.",
+      "desc_md": "Command treasure hunters Wyv and Keep through an ancient Amazonian temple in search of the Lost Idol! Use quick reflexes and teamwork to conquer a gauntlet of 60 fiendish puzzles and deadly traps. Unlock the secrets of the mystical Xu'hutl pygmies and their terrifying overlord, the great Quetzecola.",
+      "inst": "Buy the DRM free version of the game (https://www.humblebundle.com/store/wyv-and-keep-the-temple-of-the-lost-idol), download the linux version and copy wyvandkeep-bin into the wyvandkeep port folder.",
+      "inst_md": "Buy the DRM free version of the game (https://www.humblebundle.com/store/wyv-and-keep-the-temple-of-the-lost-idol), download the linux version and copy wyvandkeep-bin into the wyvandkeep port folder.",
+      "genres": [
+        "platformer",
+        "puzzle"
+      ],
+      "image": null,
+      "rtr": false,
+      "exp": false,
+      "runtime": "mono-6.12.0.122-aarch64.squashfs",
+      "reqs": [],
+      "arch": [
+        "aarch64"
+      ]
+    }
+  }

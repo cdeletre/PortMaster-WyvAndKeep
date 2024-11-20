@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gameList>
+  <game>
+    <path>./Wyv and Keep - The Temple of the Lost Idol.sh</path>
+    <name>Wyv and Keep - The Temple of the Lost Idol</name>
+    <desc>Command treasure hunters Wyv and Keep through an ancient Amazonian temple in search of the Lost Idol! Use quick reflexes and teamwork to conquer a gauntlet of 60 fiendish puzzles and deadly traps. Unlock the secrets of the mystical Xu'hutl pygmies and their terrifying overlord, the great Quetzecola.</desc>
+    <releasedate>20140808T000000</releasedate>
+    <developer>A Jolly Corpse</developer>
+    <publisher>A Jolly Corpse</publisher>
+    <genre>Platformer,Puzzle</genre>
+    <image>./wyvandkeep/cover.png</image>
+  </game>
+</gameList>

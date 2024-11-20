@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#
+#   Wyv and Keep install script
+#   Author: kotzebuedog
+#   Version: 1.0
+#
+
+# Set GAMEDIR to the current directory and set logfile
+export GAMEDIR="$PWD"
+LOGFILE="$GAMEDIR/patchlog.txt"
+
+# Redirect output and error to the log file
+exec > >(tee -a "$LOGFILE") 2>&1
+echo "GAMEDIR is set to: $GAMEDIR"
+
+[[ ! -f "${GAMEDIR}/gamepackage.bin" ]] && echo "Game installation package not found" && echo "Patching process failed!" && sleep 10 && exit 1
+
+cd "gamedata"
+unzip "${GAMEDIR}/gamepackage.bin" "data/*"
+mv data/* .
+rm -r data
+rm *.dll
+
+echo "Game data installed ! Have fun !"
