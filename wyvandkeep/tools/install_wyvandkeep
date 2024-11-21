@@ -21,5 +21,6 @@ unzip "${GAMEDIR}/gamepackage.bin" "data/*"
 mv data/* .
 rm -r data
 rm *.dll
+rm gamepackage.bin
 
 echo "Game data installed ! Have fun !"

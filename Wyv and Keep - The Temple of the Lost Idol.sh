@@ -20,6 +20,7 @@ source "${controlfolder}/tasksetter"
 
 # Variables
 GAMEDIR="/${directory}/ports/wyvandkeep"
+HACKSDL_CONF="${GAMEDIR}/hacksdl.conf"
 cd "${GAMEDIR}"
 
 > "${GAMEDIR}/log.txt" && exec > >(tee "${GAMEDIR}/log.txt") 2>&1
@@ -50,6 +51,24 @@ find_game_package()
   echo "Game package not found"
   return 1
 }
+
+enable_hacksdl()
+{
+  
+  export HACKSDL_VERBOSE="1"
+  export HACKSDL_CONFIG_FILE="$GAMEDIR/tools/hacksdl.${DISPLAY_WIDTH}x${DISPLAY_HEIGHT}.conf"
+  
+  cd "${GAMEDIR}"
+  "${GAMEDIR}/tools/patch.aarch64" -p0 -R -s -f --dry-run < "${GAMEDIR}/tools/hacksdl.enable.patch" || "${GAMEDIR}/tools/patch.aarch64" -p0 < "${GAMEDIR}/tools/hacksdl.enable.patch"
+
+}
+
+disable_hacksdl()
+{
+  cd "${GAMEDIR}"
+  "${GAMEDIR}/tools/patch.aarch64" -p0 -R < "${GAMEDIR}/tools/hacksdl.enable.patch"
+}
+
 
 # --------------------- END FUNCTIONS ---------------------
 
@@ -84,11 +103,16 @@ if [[ ! -f "${GAMEDIR}/gamedata/WyvAndKeep.exe" ]];then
 
 fi
 
-cd "$GAMEDIR/gamedata"
 
 $GPTOKEYB "mono" &
 pm_platform_helper "mono"
+
+[[ -f "$GAMEDIR/tools/hacksdl.${DISPLAY_WIDTH}x${DISPLAY_HEIGHT}.conf" ]] && enable_hacksdl
+
+cd "${GAMEDIR}/gamedata"
 $TASKSET mono "WyvAndKeep.exe"
+
+[[ -f "$GAMEDIR/tools/hacksdl.${DISPLAY_WIDTH}x${DISPLAY_HEIGHT}.conf" ]] && disable_hacksdl
 
 pm_finish
 
